@@ -16,13 +16,15 @@
  */
 package org.geekbang.thinking.in.spring.ioc.overview.domain;
 
+import java.io.Serializable;
+
 /**
  * 用户类
  *
  * @author <a href="mailto:mercyblitz@gmail.com">Mercy</a>
  * @since
  */
-public class User {
+public class User implements Serializable {
 
     private Long id;
 
