@@ -34,12 +34,12 @@ public class DependencyInjectionDemo {
     public static void main(String[] args) {
         // 配置 XML 配置文件
         // 启动 Spring 应用上下文
-//        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
+        BeanFactory beanFactory = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/dependency-injection-context.xml");
 
         // 依赖来源一：自定义 Bean
-        UserRepository userRepository = applicationContext.getBean("userRepository", UserRepository.class);
+        UserRepository userRepository = beanFactory.getBean("userRepository", UserRepository.class);
 
 //        System.out.println(userRepository.getUsers());
 
@@ -49,8 +49,8 @@ public class DependencyInjectionDemo {
 
         ObjectFactory userFactory = userRepository.getObjectFactory();
 
-        System.out.println(userFactory.getObject() == applicationContext);
-
+//        System.out.println(userFactory.getObject() == applicationContext);
+        whoIsIoCContainer(userRepository,applicationContext);
         // 依赖查找（错误）
 //        System.out.println(beanFactory.getBean(BeanFactory.class));
 
