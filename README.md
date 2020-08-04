@@ -14,3 +14,9 @@ Step 2: Merge the changes and update on GitHub. （这里到idea里合并冲突 
 git checkout master
 git merge --no-ff mercyblitz-master
 git push origin master
+
+#打 tag
+git tag  (展示项目的所有tag版本)
+git tag v1.0(tag新版本号)
+git push origin v1.0(tag新版本号)
+
